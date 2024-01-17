@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="https://xace.ch/img/favicon.png">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:domain" content="https://xace.ch">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://xace.ch/img/favicon.png">
+	<meta property="og:title" content="# ~ xace.ch | About">
+	<meta property="og:url" content="https://xace.ch">
+
+	<title># ~ xace.ch | About</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link href="https://api.xace.ch/web-assets/css/fa6.min.css" rel="stylesheet" type="text/css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+</head>
+
+<body>
+
+	<div class="container py-4 px-3 mx-auto">
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="mx-5">
+				<div class="row justify-content-between">
+					<div class="col-4">
+						<h1>
+							<span class="fw-bolder">Riccardo</span>
+							<span class="fw-lighter">H.</span>
+						</h1>
+					</div>
+					<div class="col-4">
+						<span class="badge bg-secondary">ace</span>
+						<span class="badge bg-secondary">xace37</span>
+						<span class="badge bg-secondary">13ace37</span>
+						<span class="col float-end">
+							<a href="#" class="btn" id="themeToggleSwitch">
+								<span class="fa-fw fad fa-moon-stars" id="themeToggleIcon"></span>
+							</a>
+							<script>
+								let icons = {
+									dark: {
+										icon: "fa-moon-stars",
+										theme: "dark",
+									},
+									light: {
+										icon: "fa-sun",
+										theme: "light",
+									},
+								};
+
+								let currentTheme = localStorage.getItem("ace-theme") || "light";
+
+								let setTheme = (theme) => {
+									let toggleButton = document.getElementById("themeToggleIcon");
+									let htmlElement = document.querySelector("html");
+									htmlElement.setAttribute("data-bs-theme", theme);
+									toggleButton.className = `fa-fw fad ${icons[currentTheme].icon}`;
+								};
+								let onClick = () => {
+									console.log("click")
+									currentTheme = currentTheme === "light" ? "dark" : "light";
+									localStorage.setItem("ace-theme", currentTheme);
+									setTheme(currentTheme);
+								};
+								setTheme(currentTheme);
+
+								let themeToggleSwitch = document.getElementById("themeToggleSwitch");
+								themeToggleSwitch.addEventListener("click", onClick);
+
+							</script>
+						</span>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col-4">
+						<p class="fw-bolder">Software & Application Engineer</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-location-dot"></span>
+							<span class="fw-bolder">Location: </span>
+							Solothurn, Switzerland
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-timer"></span>
+							<span class="fw-bolder">Uptime: </span>
+							<span id="uptime"></span>
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-building"></span>
+							<span class="fw-bolder">Workplace: </span>
+							K.R. Pfiffner AG
+						</p>
+					</div>
+				</div>
+
+
+				<hr>
+
+				<div class="row justify-content-center text-center">
+					<p id="quote"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-4 px-3 mx-auto">
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-address-card"></span>
+							About me
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 mx-auto text-center">
+
+					<p>
+						👋 Hello! I'm Riccardo 'ace' H. I am a self-taught programmer and designer from Germany
+						currently living in Switzerland.
+					</p>
+
+					<p>
+						I mostly focus on backend, functional or object-oriented programming. But from time to time I
+						also do some frontend. My first priority in coding is that I never have to repeat myself, nor do
+						things multiple times. I rather spend a little more time minimizing or automating those tasks
+						than doing them by hand every time.
+					</p>
+
+					<p>
+						I currently work as a software and application engineer with a focus on optimizing department
+						workflows. My goal is to automate and eliminate unnecessary steps while maintaining consistent
+						standards to reduce integration time.
+					</p>
+
+					<p>
+						I started programming/scripting at the age of 12 and have been expanding my skills ever since.
+						<br />
+						In 2018, I jumped into Linux server administration and also delved deeper into mastering
+						automation. Since then I always try to get the best out of my code by optimizing it. I also tend
+						to keep everything, including my internal code, modular and prepared for the future.
+					</p>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="my-4"></div>
+
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-cubes"></span>
+							Current Stack
+						</h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="row text-center justify-content-center">
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3">Languages</h6>
+					<hr>
+					<span data-bs-toggle="tooltip" data-bs-title="JavaScript"
+						class="fs-2 devicon-javascript-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="C#" class="fs-2 devicon-csharp-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Lua" class="fs-2 devicon-lua-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Python" class="fs-2 devicon-python-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="HTML5" class="fs-2 devicon-html5-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="CSS3" class="fs-2 devicon-css3-plain"></span>
+				</div>
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3">"Frameworks"</h6>
+					<hr>
+					<span data-bs-toggle="tooltip" data-bs-title="NodeJS" class="fs-2 devicon-nodejs-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title=".NET Core/Framework"
+						class="fs-2 devicon-dotnetcore-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Bash" class="fs-2 devicon-bash-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Electron"
+						class="fs-2 devicon-electron-original"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Boostrap" class="fs-2 devicon-bootstrap-plain"></span>
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3">Programs / DevOps</h6>
+					<hr>
+					<span data-bs-toggle="tooltip" data-bs-title="Docker" class="fs-2 devicon-docker-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="MySQL" class="fs-2 devicon-mysql-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Grafana" class="fs-2 devicon-grafana-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Git" class="fs-2 devicon-git-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="GitLab" class="fs-2 devicon-gitlab-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="SVN" class="fs-2 devicon-subversion-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Apache" class="fs-2 devicon-apache-plain"></span>
+				</div>
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3">Operation Systems</h6>
+					<hr>
+					<span data-bs-toggle="tooltip" data-bs-title="Windows (since XP)"
+						class="fs-2 devicon-windows8-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Debian" class="fs-2 devicon-debian-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Ubuntu" class="fs-2 devicon-ubuntu-plain"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Raspberry Pi (Raspbian)"
+						class="fs-2 devicon-raspberrypi-line"></span>
+					<span data-bs-toggle="tooltip" data-bs-title="Arduino" class="fs-2 devicon-arduino-plain"></span>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="my-4"></div>
+
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-building"></span>
+							Work Projects
+						</h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="row text-center justify-content-center">
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="Electron"
+							class="float-start fs-2 devicon-electron-original"></span>
+						<span class="float-end">IBN-Tools</span>
+					</h6>
+					<hr>
+					<p>
+						A electron based multi-tool used for commissioning customer machines at work.
+						Written in NodeJS, HTML5 and VanillaJS using Bootstrap for the visuals.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="Javascript (IBN-Tools Plugin)"
+							class="float-start fs-2 devicon-javascript-plain"></span>
+						<span class="float-end">Teleservice Wrapper</span>
+					</h6>
+					<hr>
+					<p>
+						A reverse engineered api wrapper to include the machine selector, where you can select
+						customer machines for remote support, right from inside my multi-tool. It's utilizing
+						the tools plugin system to include this inside the tool.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="C# (.NET WinForms)"
+							class="float-start fs-2 devicon-dotnetcore-plain"></span>
+						<span class="float-end">Project Explorer</span>
+					</h6>
+					<hr>
+					<p>
+						A .NET Framework based desktop application that uses WinForms for the visuals and
+						displays a list of customer machines and their corresponding programming projects. You
+						can download the project directly to your local project directory and check for changes
+						from within the program.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="C# (.NET)"
+							class="float-start fs-2 devicon-dotnetcore-plain"></span>
+						<span class="float-end">Messe Video Sync</span>
+					</h6>
+					<hr>
+					<p>
+						A .NET Framework based console application that synchronizes a projector with the
+						current state of one of our machines that is displayed at several trade shows around the
+						world. Uses the web server of the PLC controller to retrieve the current status of
+						certain variables to synchronize the machining CAD animation with the actual machining
+						on the machine.
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="my-4"></div>
+
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-home-user"></span>
+							Private Projects
+						</h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="row text-center justify-content-center">
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="Express & Handlebars"
+							class="float-start fs-2 devicon-express-original"></span>
+						<span class="float-end">otter share</span>
+					</h6>
+					<hr>
+					<p>
+						A versatile file-sharing web application built with Express and Handlebars, with the
+						main goal of seamless file transfers between desktop and mobile devices without the need
+						for cables or permanent storage. All data is stored in the host server's memory and
+						automatically cleared when all users leave the room.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="Express"
+							class="float-start fs-2 devicon-express-original"></span>
+						<span class="float-end">Express FastDL</span>
+					</h6>
+					<hr>
+					<p>
+						A simple and secure fastdl server written in NodeJS using Express that serves fastdl
+						data to players connecting to the source engine game server, with the ability to only
+						allow downloads from source game clients, without the need of a dedicated web server
+						running on the game server.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="Discord.js"
+							class="float-start fs-2 devicon-discordjs-plain"></span>
+						<span class="float-end">GMOD TTT Automute</span>
+					</h6>
+					<hr>
+					<p>
+						A Discord bot and API server written with NodeJS, Discord.js and Express, that
+						complements the GMOD server plugin by receiving player information. The bot
+						automatically moves players to a designated game channel upon joining and mutes them
+						when they die in-game. They are then automatically unmuted upon respawning. Players can
+						benefit from the improved audio quality of Discord while still retaining the original
+						game mechanics.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="Lua (GLua)"
+							class="float-start fs-2 devicon-lua-plain"></span>
+						<span class="float-end">GMOD TTT Automute</span>
+					</h6>
+					<hr>
+					<p>
+						A simple GMOD server plugin written in plain lua that listens for ingame events like
+						player death, spawn etc and sends them via http to a backend server to be passed on to a
+						discord bot.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="C# (.NET WinForms)"
+							class="float-start fs-2 devicon-dotnetcore-plain"></span>
+						<span class="float-end">SurfTimer RPC GUI</span>
+					</h6>
+					<hr>
+					<p>
+						A user-friendly desktop application developed with C# and the .NET Framework utilizing
+						WinForms, enabling users to seamlessly integrate their current CS:GO SurfTimer metrics
+						and status updates into their Discord presence. This application introduces a modular
+						system that allows users to tailor the displayed information and its presentation to
+						their preferences.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="SourcePawn (C++ based)"
+							class="float-start fs-2 devicon-cplusplus-plain"></span>
+						<span class="float-end">SurfTimer</span>
+					</h6>
+					<hr>
+					<p>
+						An open-source SurfTimer plugin for CS:GO, based on the former ckSurf, written in the
+						C++-based programming language SourcePawn by AlliedModders. I modified the original
+						repository, which was no longer actively maintained, to suit the preferences of the
+						former gaming community z4lab. This is the current foundation of the active SurfTimer
+						repository in use.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="NodeJS"
+							class="float-start fs-2 devicon-nodejs-plain"></span>
+						<span class="float-end">stepchain.js</span>
+					</h6>
+					<hr>
+					<p>
+						A step chain implementation in NodeJS inspired by ST/SCL PLC programming.
+						Written in NodeJS, without any dependencies, it aims to recreate the function of a step
+						chain, commonly used for flow based programming in PLC controllers, within JavaScript.
+						Based on intervals and timeouts, your code is repeated every "cycle" until a given
+						value becomes true. As in PLC programming, you can define different steps and also jump
+						around within them.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="Discord.js"
+							class="float-start fs-2 devicon-discordjs-plain"></span>
+						<span class="float-end">Status Tracker</span>
+					</h6>
+					<hr>
+					<p>
+						A Discord bot written in NodeJS and Discord.js that is actively storing presence data
+						from all users on my private Discord server. It utilizes MariaDB for storage and
+						handling requests. The bot posts and edits Discord embeds to a given channel showing the
+						last 4 presence changes for each user.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="C# (ASP.NET)"
+							class="float-start fs-2 devicon-dotnetcore-plain"></span>
+						<span class="float-end">Status Tracker Web</span>
+					</h6>
+					<hr>
+					<p>
+						A web application written in C# ASP.NET that is displaying and analyzing the data
+						collected by the Status Tracker Discord bot. Featuring a global overview over all users,
+						a discrete user page and also timeline with all recent events. The application also
+						features a API that serves JSON data for given requests like user data or the timeline.
+						This API can also be used to display stats on third party apps like Grafana.
+					</p>
+
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+
+					<h6 class="clearfix mx-3">
+						<span data-bs-toggle="tooltip" data-bs-title="Java (PaperMC Plugin)"
+							class="float-start fs-2 devicon-java-plain"></span>
+						<span class="float-end">Dynamic Slots</span>
+					</h6>
+					<hr>
+					<p>
+						A simple PaperMC server plugin, written in Java, that automatically adjusts the server's
+						maximum player capacity to accommodate the current number of online players and a
+						predefined slot gap.
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="my-4"></div>
+
+	</div>
+
+	<script>
+		let devIcons = document.querySelectorAll("[class*=devicon]");
+		[...devIcons].forEach(devIcon => {
+
+			devIcon.addEventListener("mouseenter", () => {
+				devIcon.classList.add("colored");
+			});
+
+			devIcon.addEventListener("mouseleave", () => {
+				devIcon.classList.remove("colored");
+			});
+
+			new bootstrap.Tooltip(devIcon);
+
+		});
+	</script>
+
+	<!--
+					Quotes
+				-->
+	<script>
+		function changeQuote() {
+
+			let quoteElement = document.getElementById("quote");
+			let quotes = ["It's okay to live, even if there's no greater point to living.",
+				"It's better to be hurt than to hurt others. Nice people can be happy with just that.",
+				"Never trust anyone too much. Remember, the devil was once an angel.",
+				"Sometimes good people make bad choices. It doesn't mean they are bad people. It means they're human.",
+				"When You Entrust So Much Of Your Everyday Life To Those Electronic Devices, The Argument That You Aren't A Cyborg Isn't Very Convincing.",
+				"Celebrate your mastery: Automate for hours or excel in minutes, for the true virtuoso chooses efficiency over effort.",
+				"In the orchestra of productivity, automation conducts the symphony, while manual labor plays the occasional note.",
+				"Efficiency is the beacon of progress; automation, the lighthouse guiding us away from the treacherous shores of manual toil.",
+				"In the dance of productivity, automation waltzes gracefully, leaving manual steps stumbling in its elegant wake.",
+				"Automation: the alchemy that turns hours of labor into minutes of mastery.",
+				"Choose the path of automation, where minutes of ingenuity replace hours of tedium.",
+				"In the grand tapestry of productivity, automation weaves a masterpiece while manual work remains a mere thread.",
+				"Embrace automation as your muse; let manual labor be but a fleeting shadow in your creative process.",
+				"Automation is the phoenix rising from the ashes of manual drudgery, breathing life into efficiency.",
+				"The wise artisan knows that automation's touch transforms the mundane into the extraordinary.",
+				"In the realm of productivity, automation is the knight in shining armor, rescuing you from the dragon of manual toil."
+			];
+			let quote = `“${quotes[Math.floor(Math.random() * quotes.length)]}”`;
+			quoteElement.innerHTML = quote;
+
+		}
+
+		function initPage() {
+			changeQuote();
+			setInterval(changeQuote, 30000);
+		}
+
+		initPage();
+	</script>
+
+	<!--
+					Uptime
+				-->
+
+	<script>
+		let uptime = document.getElementById("uptime");
+		uptime.innerHTML = Math.ceil((new Date() - new Date(2001 - 1, 12, 18)) / (1000 * 3600 * 24)) + "d";
+	</script>
+
+
+</body>
+
+</html>

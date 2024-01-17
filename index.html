@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="https://xace.ch/img/favicon.png">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:domain" content="https://xace.ch">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://xace.ch/img/favicon.png">
+	<meta property="og:title" content="# ~ xace.ch">
+	<meta property="og:url" content="https://xace.ch">
+
+	<title># ~ xace.ch</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link href="https://api.xace.ch/web-assets/css/fa6.min.css" rel="stylesheet" type="text/css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<div class="container py-4 px-3 mx-auto">
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="mx-5">
+				<div class="row justify-content-between">
+					<div class="col-4">
+						<h1>
+							<span class="fw-bolder">Riccardo</span>
+							<span class="fw-lighter">H.</span>
+						</h1>
+					</div>
+					<div class="col-4">
+						<span class="badge bg-secondary">ace</span>
+						<span class="badge bg-secondary">xace37</span>
+						<span class="badge bg-secondary">13ace37</span>
+						<span class="col float-end">
+							<a href="#" class="btn" id="themeToggleSwitch">
+								<span class="fa-fw fad fa-moon-stars" id="themeToggleIcon"></span>
+							</a>
+							<script>
+								let icons = {
+									dark: {
+										icon: "fa-moon-stars",
+										theme: "dark",
+									},
+									light: {
+										icon: "fa-sun",
+										theme: "light",
+									},
+								};
+
+								let currentTheme = localStorage.getItem("ace-theme") || "light";
+
+								let setTheme = (theme) => {
+									let toggleButton = document.getElementById("themeToggleIcon");
+									let htmlElement = document.querySelector("html");
+									htmlElement.setAttribute("data-bs-theme", theme);
+									toggleButton.className = `fa-fw fad ${icons[currentTheme].icon}`;
+								};
+								let onClick = () => {
+									console.log("click")
+									currentTheme = currentTheme === "light" ? "dark" : "light";
+									localStorage.setItem("ace-theme", currentTheme);
+									setTheme(currentTheme);
+								};
+								setTheme(currentTheme);
+
+								let themeToggleSwitch = document.getElementById("themeToggleSwitch");
+								themeToggleSwitch.addEventListener("click", onClick);
+
+							</script>
+						</span>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col-4">
+						<p class="fw-bolder">Software & Application Engineer</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-location-dot"></span>
+							<span class="fw-bolder">Location: </span>
+							Solothurn, Switzerland
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-timer"></span>
+							<span class="fw-bolder">Uptime: </span>
+							<span id="uptime"></span>
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-building"></span>
+							<span class="fw-bolder">Workplace: </span>
+							K.R. Pfiffner AG
+						</p>
+					</div>
+				</div>
+
+
+				<hr>
+
+				<div class="row justify-content-center text-center">
+					<p id="quote"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-4 px-3 mx-auto">
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-timeline"></span>
+							Active Skills & Career
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 mx-auto">
+					<div class="timeline timeline-four" id="timelineContainerActive">
+						<!-- Timeline items go here -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="my-4"></div>
+
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-timeline"></span>
+							Inactived Skills & Career
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 mx-auto">
+					<div class="timeline timeline-four" id="timelineContainerInactive">
+						<!-- Timeline items go here -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--
+					Quotes
+				-->
+	<script>
+		function changeQuote() {
+
+			let quoteElement = document.getElementById("quote");
+			let quotes = ["It's okay to live, even if there's no greater point to living.",
+				"It's better to be hurt than to hurt others. Nice people can be happy with just that.",
+				"Never trust anyone too much. Remember, the devil was once an angel.",
+				"Sometimes good people make bad choices. It doesn't mean they are bad people. It means they're human.",
+				"When You Entrust So Much Of Your Everyday Life To Those Electronic Devices, The Argument That You Aren't A Cyborg Isn't Very Convincing.",
+				"Celebrate your mastery: Automate for hours or excel in minutes, for the true virtuoso chooses efficiency over effort.",
+				"In the orchestra of productivity, automation conducts the symphony, while manual labor plays the occasional note.",
+				"Efficiency is the beacon of progress; automation, the lighthouse guiding us away from the treacherous shores of manual toil.",
+				"In the dance of productivity, automation waltzes gracefully, leaving manual steps stumbling in its elegant wake.",
+				"Automation: the alchemy that turns hours of labor into minutes of mastery.",
+				"Choose the path of automation, where minutes of ingenuity replace hours of tedium.",
+				"In the grand tapestry of productivity, automation weaves a masterpiece while manual work remains a mere thread.",
+				"Embrace automation as your muse; let manual labor be but a fleeting shadow in your creative process.",
+				"Automation is the phoenix rising from the ashes of manual drudgery, breathing life into efficiency.",
+				"The wise artisan knows that automation's touch transforms the mundane into the extraordinary.",
+				"In the realm of productivity, automation is the knight in shining armor, rescuing you from the dragon of manual toil."
+			];
+			let quote = `“${quotes[Math.floor(Math.random() * quotes.length)]}”`;
+			quoteElement.innerHTML = quote;
+
+		}
+
+		function initPage() {
+			changeQuote();
+			setInterval(changeQuote, 30000);
+		}
+
+		initPage();
+	</script>
+
+	<!--
+					Timeline Items
+				-->
+
+	<script>
+		let activeTimelineContainer = document.getElementById("timelineContainerActive");
+		let inactiveTimelineContainer = document.getElementById("timelineContainerInactive");
+		let activeTimelineItems = [
+
+			/**
+			 * Active Items
+			 */
+
+			{
+				align: "left",
+				year: {
+					start: 2014,
+				},
+				title: {
+					icon: {
+						group: "fad",
+						name: "code",
+					},
+					text: "Back- & Front-End Development",
+				},
+				content: `Various back- and or front-end development focused on back-end<br>
+					JavaScript (NodeJS), C# (.NET), HTML, CSS, SourcePawn and a few other languages not worth mentioning<br>
+					More infos can be found on my github.`,
+			}, {
+				align: "left",
+				year: {
+					start: 2015,
+				},
+				title: {
+					icon: {
+						group: "fab",
+						name: "steam-symbol",
+					},
+					text: "Source Movement",
+				},
+				content: `Source movement mostly low tier surf maps`,
+			}, {
+				align: "left",
+				year: {
+					start: 2016,
+				},
+				title: {
+					icon: {
+						group: "fad",
+						name: "server",
+					},
+					text: "Server & Administration",
+				},
+				content: `Moderator or Admin on and for surf related servers`,
+			}, {
+				align: "left",
+				year: {
+					start: 2021,
+				},
+				title: {
+					icon: {
+						group: "fad",
+						name: "laptop-code",
+					},
+					text: "Software & Application Engineer",
+				},
+				content: `Software & Application Engineer at K.R. Pfiffner AG`,
+			},
+		];
+		let inactiveTimelineItems = [
+			/**
+			 * Inactive Items
+			 */
+
+			{
+				align: "right",
+				year: {
+					start: 2017,
+					end: 2021,
+				},
+				title: {
+					icon: {
+						group: "fad",
+						name: "graduation-cap",
+					},
+					text: "Education: Automation Engineering",
+				},
+				content: `Education as Automation Engineer (Automatiker EFZ) at K.R. Pfiffner AG`
+			}, {
+				align: "right",
+				year: {
+					start: 2018,
+					end: 2021,
+				},
+				title: {
+					icon: {
+						group: "fad",
+						name: "users",
+					},
+					text: "z4lab",
+				},
+				content: `Admin and later Co-Owner / Developer for the former chill gaming community z4lab.com`
+			}
+		];
+
+		let timelineItemHandler = (c, timelineItem) => {
+
+			if (timelineItem.divider) {
+
+				let divider = document.createElement("hr");
+				divider.className = "mb-3 mt-3 bg-secondary";
+
+				timelineContainer.appendChild(divider);
+
+			} else {
+
+				let timelineItemElement = document.createElement("div");
+				timelineItemElement.className = `timeline-item ${timelineItem.align === "right" ? "text-end" : ""}`;
+
+				let dateContent = document.createElement("div");
+				dateContent.className = "date-content";
+
+				let dateText = document.createElement("div");
+				dateText.className = "date-outer text-muted";
+
+				let dateWrapper = document.createElement("span");
+				dateWrapper.className = "date";
+
+				let yearText = document.createElement("span");
+				yearText.className = "year mt-1";
+				yearText.innerText = `${timelineItem.year.start}-${timelineItem.year.end || "present"}`;
+
+				let start = Number(timelineItem.year.start);
+				let end = Number(timelineItem.year.end) || (new Date).getFullYear();
+				let duration = end - start;
+
+				let yearSpan = document.createElement("span");
+				yearSpan.className = "";
+				yearSpan.innerText = `${duration}y`;
+
+				dateWrapper.innerHTML = `${timelineItem.align === "right" ? yearSpan.outerHTML : yearText.outerHTML} — ${timelineItem.align === "right" ? yearText.outerHTML : yearSpan.outerHTML}`;
+
+				// Append year elements
+				dateText.appendChild(dateWrapper);
+				dateContent.appendChild(dateText);
+				timelineItemElement.appendChild(dateContent);
+
+				let timelineContent = document.createElement("div");
+				timelineContent.className = "timeline-content";
+
+				let timelineTitle = document.createElement("h5");
+				timelineTitle.className = "title";
+
+				let timelineTitleIcon = document.createElement("i");
+				timelineTitleIcon.className = `${timelineItem.title.icon.group || "far"} fa-fw fa-${timelineItem.title.icon.name}`;
+
+				timelineTitle.innerHTML = `${timelineItem.align === "right" ? "" : timelineTitleIcon.outerHTML} ${timelineItem.title.text} ${timelineItem.align === "right" ? timelineTitleIcon.outerHTML : ""}`;
+
+				let timelineText = document.createElement("p");
+				timelineText.innerHTML = timelineItem.content;
+
+				timelineContent.appendChild(timelineTitle);
+				timelineContent.appendChild(timelineText);
+				timelineItemElement.appendChild(timelineContent);
+
+				c.appendChild(timelineItemElement);
+
+			}
+		}
+
+		activeTimelineItems.forEach(i => timelineItemHandler(activeTimelineContainer, i));
+		inactiveTimelineItems.forEach(i => timelineItemHandler(inactiveTimelineContainer, i));
+
+	</script>
+
+	<!--
+					Uptime
+				-->
+
+	<script>
+		let uptime = document.getElementById("uptime");
+		uptime.innerHTML = Math.ceil((new Date() - new Date(2001 - 1, 12, 18)) / (1000 * 3600 * 24)) + "d";
+	</script>
+
+
+</body>
+
+</html>

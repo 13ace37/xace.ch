@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="https://xace.ch/img/favicon.png">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:domain" content="https://xace.ch">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://xace.ch/img/favicon.png">
+	<meta property="og:title" content="# ~ xace.ch | Gear">
+	<meta property="og:url" content="https://xace.ch">
+
+	<title># ~ xace.ch | Gear</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link href="https://api.xace.ch/web-assets/css/fa6.min.css" rel="stylesheet" type="text/css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+	<style>
+		.list-group-item:hover {
+			opacity: 80%;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container py-4 px-3 mx-auto">
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="mx-5">
+				<div class="row justify-content-between">
+					<div class="col-4">
+						<h1>
+							<span class="fw-bolder">Riccardo</span>
+							<span class="fw-lighter">H.</span>
+						</h1>
+					</div>
+					<div class="col-4">
+						<span class="badge bg-secondary">ace</span>
+						<span class="badge bg-secondary">xace37</span>
+						<span class="badge bg-secondary">13ace37</span>
+						<span class="col float-end">
+							<a href="#" class="btn" id="themeToggleSwitch">
+								<span class="fa-fw fad fa-moon-stars" id="themeToggleIcon"></span>
+							</a>
+							<script>
+								let icons = {
+									dark: {
+										icon: "fa-moon-stars",
+										theme: "dark",
+									},
+									light: {
+										icon: "fa-sun",
+										theme: "light",
+									},
+								};
+
+								let currentTheme = localStorage.getItem("ace-theme") || "light";
+
+								let setTheme = (theme) => {
+									let toggleButton = document.getElementById("themeToggleIcon");
+									let htmlElement = document.querySelector("html");
+									htmlElement.setAttribute("data-bs-theme", theme);
+									toggleButton.className = `fa-fw fad ${icons[currentTheme].icon}`;
+								};
+								let onClick = () => {
+									console.log("click")
+									currentTheme = currentTheme === "light" ? "dark" : "light";
+									localStorage.setItem("ace-theme", currentTheme);
+									setTheme(currentTheme);
+								};
+								setTheme(currentTheme);
+
+								let themeToggleSwitch = document.getElementById("themeToggleSwitch");
+								themeToggleSwitch.addEventListener("click", onClick);
+
+							</script>
+						</span>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col-4">
+						<p class="fw-bolder">Software & Application Engineer</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-location-dot"></span>
+							<span class="fw-bolder">Location: </span>
+							Solothurn, Switzerland
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-timer"></span>
+							<span class="fw-bolder">Uptime: </span>
+							<span id="uptime"></span>
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col">
+						<p>
+							<span class="fa-fw fad fa-building"></span>
+							<span class="fw-bolder">Workplace: </span>
+							K.R. Pfiffner AG
+						</p>
+					</div>
+				</div>
+
+
+				<hr>
+
+				<div class="row justify-content-center text-center">
+					<p id="quote"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-4 px-3 mx-auto">
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-window-flip"></span>
+							Software
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3 text-center">Coding</h6>
+					<hr>
+					<ol class="list-group text-start mb-4 shadow">
+						<a target="_blank" href="https://code.visualstudio.com/insiders/"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Code Editor</div>
+								Visual Studio Code
+							</div>
+							<span class="badge bg-secondary">Insiders</span>
+						</a>
+						<a target="_blank" href="https://visualstudio.microsoft.com/vs/"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">IDE</div>
+								Visual Studio 2022
+							</div>
+							<span class="badge bg-secondary">Community</span>
+						</a>
+						<a target="_blank" href="https://github.com/microsoft/terminal"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Terminal</div>
+								Windows Terminal
+							</div>
+							<span class="badge bg-secondary">Latest</span>
+						</a>
+						<a target="_blank" href="https://ohmyposh.dev/"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Shell</div>
+								Oh My Posh
+							</div>
+							<span class="badge bg-secondary">PowerShell</span>
+						</a>
+						<a target="_blank" href="https://winscp.net/eng/index.php"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">(S)FTP Client</div>
+								WinSCP
+							</div>
+							<span class="badge bg-secondary">Latest</span>
+						</a>
+						<a target="_blank" href="https://ilspy.net/"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">.NET Decompiler</div>
+								ILSpy
+							</div>
+							<span class="badge bg-secondary">Latest</span>
+						</a>
+					</ol>
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3 text-center">Utilities</h6>
+					<hr>
+					<ol class="list-group text-start mb-4 shadow">
+						<a target="_blank" href="https://obsproject.com/"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Streaming/Recording Software</div>
+								OBS Studio
+							</div>
+							<span class="badge bg-secondary">Latest</span>
+						</a>
+						<a target="_blank" href="https://www.adobe.com/products/premiere.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Video Editing</div>
+								Adobe Premiere Pro
+							</div>
+							<span class="badge bg-secondary">2022</span>
+						</a>
+						<a target="_blank" href="https://www.blackmagicdesign.com/products/davinciresolve"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Video Cutting</div>
+								DaVinci Resolve
+							</div>
+							<span class="badge bg-secondary">18</span>
+						</a>
+						<a target="_blank" href="https://www.adobe.com/products/photoshop.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Image Editing | Design</div>
+								Adobe Photoshop
+							</div>
+							<span class="badge bg-secondary">2022</span>
+						</a>
+						<a target="_blank" href="https://www.thunderbird.net/en-US/"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Mail Client</div>
+								Mozilla Thunderbird
+							</div>
+							<span class="badge bg-secondary">Latest</span>
+						</a>
+						<a target="_blank" href="https://keeweb.info/"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Password Manager</div>
+								KeeWeb
+							</div>
+							<span class="badge bg-secondary">Latest</span>
+						</a>
+					</ol>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="my-4"></div>
+
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-computer-mouse"></span>
+							Peripherals
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3 text-center">Display & Input</h6>
+					<hr>
+					<ol class="list-group text-start mb-4 shadow">
+						<a target="_blank"
+							href="https://geizhals.de/asus-tuf-gaming-vg27aq-90lm0500-b01370-a2112120.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Monitor Main</div>
+								TUF Gaming VG27AQ
+							</div>
+							<span class="badge bg-secondary">ASUS</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/hp-e27q-g4-9vg82aa-a2445988.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Monitor Left</div>
+								E27Q G4
+							</div>
+							<span class="badge bg-secondary">HP</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/aoc-g2460vq6-a1316311.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Monitor Right <span class="text-muted">Portrait</span>
+								</div>
+								G2460VQ6
+							</div>
+							<span class="badge bg-secondary">AOC</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/arctic-z3-pro-gen-3-monitor-arm-schwarz-aemnt00051a-a1986233.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Monitor Mount</div>
+								Z3 Pro Gen 3
+							</div>
+							<span class="badge bg-secondary">Arctic</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/steelseries-rival-710-62334-a1901612.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Mouse</div>
+								Rival 710
+							</div>
+							<span class="badge bg-secondary">SteelSeries</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/logitech-g915-lightspeed-920-008903-a2118615.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Keyboard</div>
+								G915 <span class="text-muted">GL Tactile</span>
+							</div>
+							<span class="badge bg-secondary">Logitec</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/nitro-concepts-deskmat-dm16-nc-gp-mp-005-a1972373.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Mousepad</div>
+								DM16
+							</div>
+							<span class="badge bg-secondary">Nitro Concepts</span>
+						</a>
+					</ol>
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3 text-center">Audio & Network</h6>
+					<hr>
+					<ol class="list-group text-start mb-4 shadow">
+						<a target="_blank" href="https://geizhals.de/fiio-fd3-pro-a2653547.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Headphones</div>
+								FD3 Pro <span class="text-muted">32Ohm</span>
+							</div>
+							<span class="badge bg-secondary">FiiO</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/shure-sm7b-a318326.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Microphone</div>
+								SM7B
+							</div>
+							<span class="badge bg-secondary">Shure</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/elgato-wave-mic-arm-10aam9901-a2576042.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Microphone Arm</div>
+								Wave Mic Arm
+							</div>
+							<span class="badge bg-secondary">Elgato</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/tc-helicon-goxlr-a1963614.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Mixer</div>
+								GoXLR
+							</div>
+							<span class="badge bg-secondary">TC Helicon</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/wacom-one-small-schwarz-rot-ctl-472-n-a2368241.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Tablet</div>
+								CTL-472
+							</div>
+							<span class="badge bg-secondary">Wacom</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/qnap-qsw-2100-desktop-2-5g-switch-qsw-2104-2t-a2538120.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Switch</div>
+								QSW-2100
+							</div>
+							<span class="badge bg-secondary">QNAP</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/tp-link-re450-a1290909.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">WLAN Repeater</div>
+								RE450
+							</div>
+							<span class="badge bg-secondary">TP-Link</span>
+						</a>
+					</ol>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="my-4"></div>
+
+		<div class="container shadow rounded-4 border border-2 p-4">
+			<div class="row">
+				<div class="col-md-4 text-center mx-auto">
+					<div class="mb-4">
+						<h4 class="fw-bolder">
+							<span class="fa-fw fad fa-server"></span>
+							Hardware
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3 text-center">Main PC</h6>
+					<hr>
+					<ol class="list-group text-start mb-4 shadow">
+						<a target="_blank"
+							href="https://geizhals.de/lian-li-o11dynamic-xl-rog-certified-schwarz-pc-o11dxl-x-a2126310.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Case</div>
+								PC-O11 Dynamic XL schwarz
+							</div>
+							<span class="badge bg-secondary">Lian Li</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/intel-core-i9-12900kf-v98454.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">CPU</div>
+								i9-12900KF
+							</div>
+							<span class="badge bg-secondary">Intel</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/asus-rog-maximus-z690-extreme-90mb18h0-m0eay0-a2625469.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Mainboard</div>
+								MAXIMUS Z690 EXTREME
+							</div>
+							<span class="badge bg-secondary">ROG</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/gainward-geforce-rtx-3090-v55096.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">GPU</div>
+								GeForce RTX 3090
+							</div>
+							<span class="badge bg-secondary">NVIDIA</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/corsair-dominator-platinum-rgb-schwarz-dimm-kit-64gb-cmt64gx5m2b5200c40-a2669753.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">RAM</div>
+								64GB Dominator Platinum RGB
+							</div>
+							<span class="badge bg-secondary">Corsair</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/samsung-ssd-980-pro-2tb-mz-v8p2t0bw-a2454607.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">SSD <span class="text-muted">(BOOT)</span></div>
+								2TB 980 PRO
+							</div>
+							<span class="badge bg-secondary">Samsung</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/samsung-ssd-970-evo-plus-2tb-mz-v7s2t0bw-a1972736.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">SSD</div>
+								2TB 970 EVO Plus
+							</div>
+							<span class="badge bg-secondary">Samsung</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/western-digital-wd-red-plus-10tb-wd101efbx-a2425265.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">HDD <span class="text-muted">(SW-RAID0)</span></div>
+								2x 10TB WD Red
+							</div>
+							<span class="badge bg-secondary">Western Digital</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/corsair-hx-series-hx1200-80-plus-platinum-1200w-atx-2-4-cp-9020140-a1558691.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">PSU</div>
+								1200W HX 80PLUS Platinum
+							</div>
+							<span class="badge bg-secondary">Corsair</span>
+						</a>
+						<a target="_blank" href="https://www.microsoft.com/en-us/windows/windows-11?r=1"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">OS</div>
+								Windows 11
+							</div>
+							<span class="badge bg-secondary">Microsoft</span>
+						</a>
+					</ol>
+				</div>
+
+				<div class="col-md-5 container shadow rounded-4 border border-2 p-4 m-3">
+					<h6 class="mb-3 text-center">NAS (VM Host)</h6>
+					<hr>
+					<ol class="list-group text-start mb-4 shadow">
+						<a target="_blank"
+							href="https://geizhals.de/fractal-design-define-7-compact-black-fd-c-def7c-01-a2303805.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Case</div>
+								Define 7 Compact Black Solid
+							</div>
+							<span class="badge bg-secondary">Fractal Design</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/intel-core-i7-9700k-v23218.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">CPU</div>
+								i7-9700K
+							</div>
+							<span class="badge bg-secondary">Intel</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/asus-rog-strix-z390-f-gaming-90mb0yg0-m0eay0-a1899136.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">Mainboard</div>
+								Strix Z390-F
+							</div>
+							<span class="badge bg-secondary">ROG</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/nedis-kabt150ebk-toaster-a2641181.html?hloc=at&hloc=de&hloc=pl&hloc=uk"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">GPU <span class="text-muted">NVENC</span></div>
+								GeForce GTX 745 - GM107
+							</div>
+							<span class="badge bg-secondary">NVIDIA (Lenovo)</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/noctua-nh-l12s-a1698589.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">CPU-Cooler</div>
+								L12S
+							</div>
+							<span class="badge bg-secondary">Noctua</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/corsair-vengeance-lpx-schwarz-dimm-kit-128gb-cmk128gx4m4a2666c16-a2106871.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">RAM</div>
+								128GB Vengeance LPX
+							</div>
+							<span class="badge bg-secondary">Corsair</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/intel-ssd-320-300gb-ssdsa2bw300g301-a676750.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">SSD <span class="text-muted">(BOOT)</span></div>
+								Series 320 300GB
+							</div>
+							<span class="badge bg-secondary">Intel</span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/seagate-ironwolf-nas-hdd-8tb-st8000vn0022-a1504502.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">HDD <span class="text-muted"></span></div>
+								5x 8TB IronWolf NAS <span class="text-muted">RAIDZ1</span>
+							</div>
+							<span class="badge bg-secondary">Seagate</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/crucial-p1-ssd-1tb-ct1000p1ssd8-a1907687.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">SSD <span class="text-muted">ZFS Cache</span></div>
+								1TB P1
+							</div>
+							<span class="badge bg-secondary">Crucial</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/intel-ssd-320-300gb-ssdsa2bw300g301-a676750.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">SSD <span class="text-muted">(Encrypted Storage)</span></div>
+								Series 320 300GB
+							</div>
+							<span class="badge bg-secondary">Intel</span>
+						</a>
+						<a target="_blank" href="https://geizhals.de/raidsonic-icy-box-ib-3805-c31-60640-a2335743.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">HDD Case <span class="text-muted">Direct Access</span></div>
+								IB-3805-C31
+							</div>
+							<span class="badge bg-secondary">RaidSonic Icy Box </span>
+						</a>
+						<a target="_blank"
+							href="https://geizhals.de/be-quiet-pure-power-9-cm-700w-atx-2-4-bn269-a1407791.html"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">PSU</div>
+								700W Pure Power 9
+							</div>
+							<span class="badge bg-secondary">beQuiet</span>
+						</a>
+						<a target="_blank" href="https://www.truenas.com/truenas-scale/"
+							class="list-group-item d-flex justify-content-between align-items-start border border-secondary">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">OS</div>
+								TrueNAS SCALE
+							</div>
+							<span class="badge bg-secondary">22.02.4</span>
+						</a>
+					</ol>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		let devIcons = document.querySelectorAll("[class*=devicon]");
+		[...devIcons].forEach(devIcon => {
+
+			devIcon.addEventListener("mouseenter", () => {
+				devIcon.classList.add("colored");
+			});
+
+			devIcon.addEventListener("mouseleave", () => {
+				devIcon.classList.remove("colored");
+			});
+
+			new bootstrap.Tooltip(devIcon);
+
+		});
+	</script>
+
+	<!--
+					Quotes
+				-->
+	<script>
+		function changeQuote() {
+
+			let quoteElement = document.getElementById("quote");
+			let quotes = ["It's okay to live, even if there's no greater point to living.",
+				"It's better to be hurt than to hurt others. Nice people can be happy with just that.",
+				"Never trust anyone too much. Remember, the devil was once an angel.",
+				"Sometimes good people make bad choices. It doesn't mean they are bad people. It means they're human.",
+				"When You Entrust So Much Of Your Everyday Life To Those Electronic Devices, The Argument That You Aren't A Cyborg Isn't Very Convincing.",
+				"Celebrate your mastery: Automate for hours or excel in minutes, for the true virtuoso chooses efficiency over effort.",
+				"In the orchestra of productivity, automation conducts the symphony, while manual labor plays the occasional note.",
+				"Efficiency is the beacon of progress; automation, the lighthouse guiding us away from the treacherous shores of manual toil.",
+				"In the dance of productivity, automation waltzes gracefully, leaving manual steps stumbling in its elegant wake.",
+				"Automation: the alchemy that turns hours of labor into minutes of mastery.",
+				"Choose the path of automation, where minutes of ingenuity replace hours of tedium.",
+				"In the grand tapestry of productivity, automation weaves a masterpiece while manual work remains a mere thread.",
+				"Embrace automation as your muse; let manual labor be but a fleeting shadow in your creative process.",
+				"Automation is the phoenix rising from the ashes of manual drudgery, breathing life into efficiency.",
+				"The wise artisan knows that automation's touch transforms the mundane into the extraordinary.",
+				"In the realm of productivity, automation is the knight in shining armor, rescuing you from the dragon of manual toil."
+			];
+			let quote = `“${quotes[Math.floor(Math.random() * quotes.length)]}”`;
+			quoteElement.innerHTML = quote;
+
+		}
+
+		function initPage() {
+			changeQuote();
+			setInterval(changeQuote, 30000);
+		}
+
+		initPage();
+	</script>
+
+	<!--
+					Uptime
+				-->
+
+	<script>
+		let uptime = document.getElementById("uptime");
+		uptime.innerHTML = Math.ceil((new Date() - new Date(2001 - 1, 12, 18)) / (1000 * 3600 * 24)) + "d";
+	</script>
+
+
+</body>
+
+</html>
