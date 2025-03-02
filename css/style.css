@@ -5,6 +5,14 @@ body {
 	transition: color 0.3s, background-color 0.3s;
 }
 
+.text-justify {
+	text-align: justify;
+}
+
+/* Dev Icons */
+[class*="devicon"]:hover {
+	text-shadow: 0 0 2.5px var(--bs-body-color);
+}
 
 /* Light Mode - Nord Theme */
 [data-bs-theme="nord-light"] {

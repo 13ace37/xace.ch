@@ -107,3 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	activateTabFromHash();
 	updateHashOnTabChange();
 });
+
+/* Devicon Coloring */
+[...document.querySelectorAll("[class*=devicon]")].forEach(devIcon => {
+	devIcon.addEventListener("mouseenter", () => devIcon.classList.add("colored"));
+	devIcon.addEventListener("mouseleave", () => devIcon.classList.remove("colored"));
+	new bootstrap.Tooltip(devIcon);
+});
