@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+	font-family: "Space Mono", serif;
+	transition: color 0.3s, background-color 0.3s;
+}
+
+
+/* Light Mode - Nord Theme */
+[data-bs-theme="nord-light"] {
+	--bs-primary: #88C0D0;
+	--bs-primary-rgb: 136, 192, 208;
+	/* Frost - Light Blue */
+	--bs-secondary: #81A1C1;
+	--bs-secondary-rgb: 129, 161, 193;
+	/* Frost - Blue */
+	--bs-secondary-color: #4C566A;
+	/* Muted */
+	--bs-success: #A3BE8C;
+	--bs-success-rgb: 163, 190, 140;
+	/* Green */
+	--bs-info: #B48EAD;
+	--bs-info-rgb: 180, 142, 173;
+	/* Purple */
+	--bs-warning: #EBCB8B;
+	--bs-warning-rgb: 235, 203, 139;
+	/* Yellow */
+	--bs-danger: #BF616A;
+	--bs-danger-rgb: 191, 97, 106;
+	/* Red */
+	--bs-light: #ECEFF4;
+	--bs-light-rgb: 236, 239, 244;
+	/* Snow Storm - Light */
+	--bs-dark: #4C566A;
+	--bs-dark-rgb: 76, 86, 106;
+	/* Polar Night - Dark */
+
+	/* Extended Bootstrap Colors */
+	--bs-gray: #B0BEC5;
+	--bs-gray-rgb: 176, 190, 197;
+	--bs-gray-dark: #546E7A;
+	--bs-gray-dark-rgb: 84, 110, 122;
+	--bs-white: #FFFFFF;
+	--bs-white-rgb: 255, 255, 255;
+	--bs-black: #000000;
+	--bs-black-rgb: 0, 0, 0;
+
+	/* Background & Text */
+	--bs-body-bg: #D8DEE9;
+	--bs-body-bg-rgb: 216, 222, 233;
+	/* Snow Storm - Lighter */
+	--bs-body-color: #2E3440;
+	--bs-body-color-rgb: 46, 52, 64;
+	/* Polar Night - Darkest */
+
+	/* Nav Tabs - Active */
+	--bs-emphasis-color: #2E3440;
+	--bs-border-color: #2E3440;
+	--bs-link-color: #81A1C1;
+	--bs-link-hover-color: #88C0D0;
+	/* Darkest text */
+	--bs-nav-tabs-link-active-bg: #88C0D0;
+	/* Frost - Light Blue */
+	--bs-nav-tabs-link-active-border-color: #81A1C1;
+	/* Frost - Blue */
+}
+
+/* Dark Mode - Nord Theme */
+[data-bs-theme="nord-dark"] {
+	--bs-primary: #88C0D0;
+	--bs-primary-rgb: 136, 192, 208;
+	/* Frost - Light Blue */
+	--bs-secondary: #81A1C1;
+	--bs-secondary-rgb: 129, 161, 193;
+	/* Frost - Blue */
+	--bs-secondary-color: #6D7075;
+	/* Muted */
+	--bs-success: #A3BE8C;
+	--bs-success-rgb: 163, 190, 140;
+	/* Green */
+	--bs-info: #B48EAD;
+	--bs-info-rgb: 180, 142, 173;
+	/* Purple */
+	--bs-warning: #EBCB8B;
+	--bs-warning-rgb: 235, 203, 139;
+	/* Yellow */
+	--bs-danger: #BF616A;
+	--bs-danger-rgb: 191, 97, 106;
+	/* Red */
+	--bs-light: #434C5E;
+	--bs-light-rgb: 67, 76, 94;
+	/* Polar Night - Darker */
+	--bs-dark: #2E3440;
+	--bs-dark-rgb: 46, 52, 64;
+	/* Polar Night - Darkest */
+
+	/* Extended Bootstrap Colors */
+	--bs-gray: #A5A5A5;
+	--bs-gray-rgb: 165, 165, 165;
+	--bs-gray-dark: #6D7075;
+	--bs-gray-dark-rgb: 109, 112, 117;
+	--bs-white: #FFFFFF;
+	--bs-white-rgb: 255, 255, 255;
+	--bs-black: #000000;
+	--bs-black-rgb: 0, 0, 0;
+
+	/* Background & Text */
+	--bs-body-bg: #2E3440;
+	--bs-body-bg-rgb: 46, 52, 64;
+	/* Dark background */
+	--bs-body-color: #D8DEE9;
+	--bs-body-color-rgb: 216, 222, 233;
+	/* Light text */
+
+	/* Nav Tabs - Active */
+	--bs-emphasis-color: #D8DEE9;
+	--bs-border-color: #D8DEE9;
+	--bs-link-color: #81A1C1;
+	--bs-link-hover-color: #88C0D0;
+	/* Light text */
+	--bs-nav-tabs-link-active-bg: #434C5E;
+	/* Polar Night - Darker */
+	--bs-nav-tabs-link-active-border-color: #88C0D0;
+	/* Frost - Light Blue */
+}
