@@ -17,6 +17,11 @@ body {
 	text-shadow: 0 0 2.5px var(--bs-body-color);
 }
 
+/* List Group Item : Hover */
+.list-group-item.hover:hover {
+	opacity: 80%;
+}
+
 /* Light Mode - Nord Theme */
 [data-bs-theme="nord-light"] {
 	--bs-primary: #88C0D0;
