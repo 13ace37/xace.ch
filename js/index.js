@@ -83,29 +83,41 @@ window.setInterval(() => {
 }, 500);
 
 /* Add hash open to nav tabs */
-document.addEventListener("DOMContentLoaded", () => {
-	let activateTabFromHash = () => {
-		let { hash } = window.location;
-		if (hash) {
-			let tabButton = document.querySelector(`button[data-bs-target="${hash}"]`);
-			if (tabButton) new bootstrap.Tab(tabButton).show();
-		}
-	};
+let activateTabFromHash = () => {
+	let { hash } = window.location;
+	if (hash) {
+		let tabButton = document.querySelector(`button[data-bs-target="${hash}"]`);
+		if (tabButton) new bootstrap.Tab(tabButton).show();
+	}
+};
 
-	let updateHashOnTabChange = () => {
-		document.querySelectorAll(".nav-link").forEach(tab => {
-			tab.addEventListener("shown.bs.tab", (event) => {
-				let newHash = event.target.getAttribute("data-bs-target");
-				history.replaceState(null, null, newHash);
-			});
+let updateHashOnTabChange = () => {
+	document.querySelectorAll(".nav-link").forEach(tab => {
+		tab.addEventListener("shown.bs.tab", (event) => {
+			let newHash = event.target.getAttribute("data-bs-target");
+			history.replaceState(null, null, newHash);
 		});
-	};
+	});
+};
+document.addEventListener("DOMContentLoaded", () => {
 
 	/* Also make sure to apply changes that some1 made manually to the hash */
 	window.addEventListener("hashchange", activateTabFromHash);
 
 	activateTabFromHash();
 	updateHashOnTabChange();
+});
+
+/* Check for configured navigation */
+document.addEventListener("DOMContentLoaded", () => {
+
+	let { pathname } = window.location;
+	pathname = pathname.replace(/\/$/, ""); // replace tailing /
+
+	if (!(pathname in gConfig.navLinks)) return;
+
+	history.replaceState(null, null, gConfig.navLinks[pathname]);
+
 });
 
 /* Devicon Coloring */

@@ -26,4 +26,13 @@ const gConfig = {
 	themeAttribute: "data-bs-theme",
 	themeItem: "ace-theme",
 
+	/* Navigation */
+	navLinks: {
+		"/skills": "/#nav-gear",
+		"/about": "/#nav-about",
+		"/projects": "/#nav-pprojects",
+		"/work-projects": "/#nav-wprojects",
+		"/gear": "/#nav-gear",
+	}
+
 };
