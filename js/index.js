@@ -86,7 +86,7 @@ window.setInterval(() => {
 let activateTabFromHash = () => {
 	let { hash } = window.location;
 	if (hash) {
-		let tabButton = document.querySelector(`button[data-bs-target="${hash}"]`);
+		let tabButton = document.querySelector(`button[data-bs-target="${hash.replace("#", "#nav-")}"]`);
 		if (tabButton) new bootstrap.Tab(tabButton).show();
 	}
 };
@@ -94,7 +94,7 @@ let activateTabFromHash = () => {
 let updateHashOnTabChange = () => {
 	document.querySelectorAll(".nav-link").forEach(tab => {
 		tab.addEventListener("shown.bs.tab", (event) => {
-			let newHash = event.target.getAttribute("data-bs-target");
+			let newHash = event.target.getAttribute("data-bs-target").replace("nav-", "");
 			history.replaceState(null, null, newHash);
 		});
 	});

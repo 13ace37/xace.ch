@@ -28,11 +28,11 @@ const gConfig = {
 
 	/* Navigation */
 	navLinks: {
-		"/skills": "/#nav-skills",
-		"/about": "/#nav-about",
-		"/projects": "/#nav-pprojects",
-		"/work-projects": "/#nav-wprojects",
-		"/gear": "/#nav-gear",
+		"/skills": "/#skills",
+		"/about": "/#about",
+		"/projects": "/#pprojects",
+		"/work-projects": "/#wprojects",
+		"/gear": "/#gear",
 	}
 
 };
