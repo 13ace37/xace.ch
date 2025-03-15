@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (!(pathname in gConfig.navLinks)) return;
 
 	history.replaceState(null, null, gConfig.navLinks[pathname]);
+	activateTabFromHash();
 
 });
 

@@ -28,7 +28,7 @@ const gConfig = {
 
 	/* Navigation */
 	navLinks: {
-		"/skills": "/#nav-gear",
+		"/skills": "/#nav-skills",
 		"/about": "/#nav-about",
 		"/projects": "/#nav-pprojects",
 		"/work-projects": "/#nav-wprojects",
