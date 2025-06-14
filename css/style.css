@@ -22,3 +22,111 @@ body {
 .list-group-item.hover:hover {
 	opacity: 80%;
 }
+
+/* Enhanced Gear Page Styling */
+#nav-gear .card {
+	transition: all 0.3s ease;
+	backdrop-filter: blur(10px);
+	border: 1px solid var(--bs-border-color-translucent) !important;
+}
+
+#nav-gear .card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+#nav-gear .card-header {
+	padding: 1.25rem 1.5rem 0.75rem;
+}
+
+#nav-gear .card-body {
+	padding: 0 1.5rem 1.5rem;
+}
+
+#nav-gear .list-group-item {
+	transition: all 0.2s ease;
+	border-radius: 8px !important;
+	margin-bottom: 2px;
+	border: none !important;
+}
+
+#nav-gear .list-group-item:hover {
+	background-color: var(--bs-secondary-bg) !important;
+	transform: translateX(4px);
+}
+
+#nav-gear .list-group-item:active {
+	transform: translateX(2px);
+}
+
+#nav-gear .badge {
+	font-size: 0.75rem;
+	padding: 0.375rem 0.75rem;
+	border-radius: 6px;
+	font-weight: 500;
+}
+
+#nav-gear .fs-4 {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#nav-gear .fs-5 {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Responsive adjustments for gear cards */
+@media (max-width: 1199.98px) {
+	#nav-gear .col-xl-6 {
+		margin-bottom: 1.5rem;
+	}
+}
+
+@media (max-width: 767.98px) {
+
+	#nav-gear .card-header,
+	#nav-gear .card-body {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	#nav-gear .list-group-item {
+		padding: 0.75rem 1rem !important;
+	}
+
+	#nav-gear .list-group-item .me-3 {
+		margin-right: 0.75rem !important;
+	}
+}
+
+/* Icon color consistency */
+#nav-gear .text-primary {
+	color: var(--bs-primary) !important;
+}
+
+#nav-gear .text-success {
+	color: var(--bs-success) !important;
+}
+
+#nav-gear .text-info {
+	color: var(--bs-info) !important;
+}
+
+#nav-gear .text-warning {
+	color: var(--bs-warning) !important;
+}
+
+#nav-gear .text-danger {
+	color: var(--bs-danger) !important;
+}
+
+#nav-gear .text-secondary {
+	color: var(--bs-secondary) !important;
+}
