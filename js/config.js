@@ -1,5 +1,4 @@
 const gConfig = {
-
 	/* Themes */
 	themes: {
 		"nord-dark": {
@@ -9,6 +8,29 @@ const gConfig = {
 		"nord-light": {
 			name: "Nord Light",
 			icon: "bi bi-cloud-sun-fill"
+		},
+		"vscode-dark": {
+			name: "VS Code Dark",
+			icon: "bi bi-code-slash"
+		},
+		"dracula": {
+			name: "Dracula",
+			icon: "bi bi-moon-fill"
+		},
+		"monokai": {
+			name: "Monokai",
+			icon: "bi bi-terminal-fill"
+		},
+		"solarized-dark": {
+			name: "Solarized Dark",
+			icon: "bi bi-circle-half"
+		},
+		"github-dark": {
+			name: "GitHub Dark",
+			icon: "bi bi-github"
+		}, "atom-one-dark": {
+			name: "Atom One Dark",
+			icon: "bi-record-circle"
 		},
 		dark: {
 			name: "Dark",
