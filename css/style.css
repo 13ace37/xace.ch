@@ -70,16 +70,65 @@ body {
 	--bs-body-color-rgb: 46, 52, 64;
 	/* Polar Night - Darkest */
 
-	/* Nav Tabs - Active */
-	--bs-emphasis-color: #2E3440;
-	--bs-border-color: #2E3440;
+	/* Secondary Background Colors */
+	--bs-secondary-bg: #ECEFF4;
+	--bs-secondary-bg-rgb: 236, 239, 244;
+	--bs-tertiary-bg: #E5E9F0;
+	--bs-tertiary-bg-rgb: 229, 233, 240;
+
+	/* Border Colors */
+	--bs-border-color: #D8DEE9;
+	--bs-border-color-translucent: rgba(216, 222, 233, 0.175);
+
+	/* Link Colors */
 	--bs-link-color: #81A1C1;
 	--bs-link-hover-color: #88C0D0;
-	/* Darkest text */
+	--bs-link-color-rgb: 129, 161, 193;
+	--bs-link-hover-color-rgb: 136, 192, 208;
+
+	/* Text Colors */
+	--bs-emphasis-color: #2E3440;
+	--bs-emphasis-color-rgb: 46, 52, 64;
+	--bs-secondary-color: #4C566A;
+	--bs-secondary-color-rgb: 76, 86, 106;
+	--bs-tertiary-color: #5E81AC;
+	--bs-tertiary-color-rgb: 94, 129, 172;
+
+	/* Component specific */
+	--bs-heading-color: #2E3440;
+	--bs-code-color: #BF616A;
+
+	/* Nav Tabs */
 	--bs-nav-tabs-link-active-bg: #88C0D0;
-	/* Frost - Light Blue */
 	--bs-nav-tabs-link-active-border-color: #81A1C1;
-	/* Frost - Blue */
+	--bs-nav-tabs-link-active-color: #2E3440;
+
+	/* Dropdown */
+	--bs-dropdown-bg: #ECEFF4;
+	--bs-dropdown-border-color: #D8DEE9;
+	--bs-dropdown-link-color: #2E3440;
+	--bs-dropdown-link-hover-color: #2E3440;
+	--bs-dropdown-link-hover-bg: #E5E9F0;
+	--bs-dropdown-link-active-color: #FFFFFF;
+	--bs-dropdown-link-active-bg: #88C0D0;
+
+	/* Button variants */
+	--bs-btn-close-color: #2E3440;
+	--bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232E3440'%3e%3cpath d='m.02 2.01.58-.58L8 9.83 15.4 1.43l.58.58L8.58 10.4 16 15.4l-.58.58L8 9.58.6 15.98l-.58-.58L7.42 8z'/%3e%3c/svg%3e");
+
+	/* Form controls */
+	--bs-form-control-bg: #ECEFF4;
+	--bs-form-control-border-color: #D8DEE9;
+	--bs-form-control-color: #2E3440;
+
+	/* List group */
+	--bs-list-group-bg: #ECEFF4;
+	--bs-list-group-border-color: #D8DEE9;
+	--bs-list-group-color: #2E3440;
+	--bs-list-group-hover-bg: #E5E9F0;
+	--bs-list-group-active-bg: #88C0D0;
+	--bs-list-group-active-color: #2E3440;
+	--bs-list-group-active-border-color: #81A1C1;
 }
 
 /* Dark Mode - Nord Theme */
@@ -129,14 +178,63 @@ body {
 	--bs-body-color-rgb: 216, 222, 233;
 	/* Light text */
 
-	/* Nav Tabs - Active */
-	--bs-emphasis-color: #D8DEE9;
-	--bs-border-color: #D8DEE9;
+	/* Secondary Background Colors */
+	--bs-secondary-bg: #3B4252;
+	--bs-secondary-bg-rgb: 59, 66, 82;
+	--bs-tertiary-bg: #434C5E;
+	--bs-tertiary-bg-rgb: 67, 76, 94;
+
+	/* Border Colors */
+	--bs-border-color: #4C566A;
+	--bs-border-color-translucent: rgba(76, 86, 106, 0.175);
+
+	/* Link Colors */
 	--bs-link-color: #81A1C1;
 	--bs-link-hover-color: #88C0D0;
-	/* Light text */
+	--bs-link-color-rgb: 129, 161, 193;
+	--bs-link-hover-color-rgb: 136, 192, 208;
+
+	/* Text Colors */
+	--bs-emphasis-color: #D8DEE9;
+	--bs-emphasis-color-rgb: 216, 222, 233;
+	--bs-secondary-color: #6D7075;
+	--bs-secondary-color-rgb: 109, 112, 117;
+	--bs-tertiary-color: #8FBCBB;
+	--bs-tertiary-color-rgb: 143, 188, 187;
+
+	/* Component specific */
+	--bs-heading-color: #D8DEE9;
+	--bs-code-color: #BF616A;
+
+	/* Nav Tabs */
 	--bs-nav-tabs-link-active-bg: #434C5E;
-	/* Polar Night - Darker */
 	--bs-nav-tabs-link-active-border-color: #88C0D0;
-	/* Frost - Light Blue */
+	--bs-nav-tabs-link-active-color: #D8DEE9;
+
+	/* Dropdown */
+	--bs-dropdown-bg: #3B4252;
+	--bs-dropdown-border-color: #4C566A;
+	--bs-dropdown-link-color: #D8DEE9;
+	--bs-dropdown-link-hover-color: #D8DEE9;
+	--bs-dropdown-link-hover-bg: #434C5E;
+	--bs-dropdown-link-active-color: #2E3440;
+	--bs-dropdown-link-active-bg: #88C0D0;
+
+	/* Button variants */
+	--bs-btn-close-color: #D8DEE9;
+	--bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23D8DEE9'%3e%3cpath d='m.02 2.01.58-.58L8 9.83 15.4 1.43l.58.58L8.58 10.4 16 15.4l-.58.58L8 9.58.6 15.98l-.58-.58L7.42 8z'/%3e%3c/svg%3e");
+
+	/* Form controls */
+	--bs-form-control-bg: #3B4252;
+	--bs-form-control-border-color: #4C566A;
+	--bs-form-control-color: #D8DEE9;
+
+	/* List group */
+	--bs-list-group-bg: #3B4252;
+	--bs-list-group-border-color: #4C566A;
+	--bs-list-group-color: #D8DEE9;
+	--bs-list-group-hover-bg: #434C5E;
+	--bs-list-group-active-bg: #88C0D0;
+	--bs-list-group-active-color: #2E3440;
+	--bs-list-group-active-border-color: #81A1C1;
 }
