@@ -28,7 +28,8 @@ const gConfig = {
 		"github-dark": {
 			name: "GitHub Dark",
 			icon: "bi bi-github"
-		}, "atom-one-dark": {
+		},
+		"atom-one-dark": {
 			name: "Atom One Dark",
 			icon: "bi-record-circle"
 		},
