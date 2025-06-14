@@ -30,12 +30,18 @@
 						<span class="fw-normal">Hahn</span>
 					</h1>
 				</div>
-
 				<div class="col-auto">
-					<a class="btn text-muted ace-theme-picker">
-						<span>Theme</span>
-						<i class="bi bi-moon-stars-fill"></i>
-					</a>
+					<div class="dropdown">
+						<button
+							class="btn btn-outline-secondary dropdown-toggle ace-theme-picker d-flex align-items-center"
+							type="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="bi bi-moon-stars-fill me-2"></i>
+							<span>Theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end ace-theme-dropdown shadow-sm"
+							style="min-width: 180px;">
+						</ul>
+					</div>
 				</div>
 
 			</div>

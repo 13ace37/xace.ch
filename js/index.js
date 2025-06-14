@@ -8,20 +8,84 @@ let gLastTheme = gConfig.currentTheme;
 
 /* Theme Pickers */
 let themePickers = [...document.getElementsByClassName("ace-theme-picker")]
+let themeDropdown = document.querySelector(".ace-theme-dropdown");
+
+/* Initialize Theme Dropdown */
+let initializeThemeDropdown = () => {
+	if (!themeDropdown) return;
+
+	// Clear existing items
+	themeDropdown.innerHTML = "";
+
+	// Add theme options
+	Object.keys(gConfig.themes).forEach(themeKey => {
+		let theme = gConfig.themes[themeKey];
+		let li = document.createElement("li");
+		let a = document.createElement("a");
+		a.className = "dropdown-item d-flex align-items-center";
+		a.href = "#";
+		a.dataset.theme = themeKey;
+
+		let icon = document.createElement("i");
+		icon.className = theme.icon + " me-2 flex-shrink-0";
+		icon.style.width = "1.25rem";
+
+		let span = document.createElement("span");
+		span.textContent = theme.name;
+		span.className = "flex-grow-1";
+
+		a.appendChild(icon);
+		a.appendChild(span);
+
+		// Add active indicator
+		if (themeKey === gConfig.currentTheme) {
+			a.classList.add("active");
+			let checkIcon = document.createElement("i");
+			checkIcon.className = "bi bi-check ms-2 flex-shrink-0";
+			a.appendChild(checkIcon);
+		}
+
+		li.appendChild(a);
+		themeDropdown.appendChild(li);
+	});
+
+	// Add click event listeners to dropdown items
+	themeDropdown.querySelectorAll(".dropdown-item").forEach(item => {
+		item.addEventListener("click", (e) => {
+			e.preventDefault();
+			let selectedTheme = item.dataset.theme;
+			setTheme(selectedTheme);
+		});
+	});
+};
 
 /* Theme Icon Change Function */
 let changeThemePickerIcons = (theme = gConfig.defaultTheme, isInitial = false) => {
 	if (Object.keys(gConfig.themes).indexOf(theme) === -1) theme = gConfig.defaultTheme;
+
+	// Update main theme picker button
 	themePickers.forEach(themePickerElement => {
 		let textElement = themePickerElement.querySelector("span");
 		let iconElement = themePickerElement.querySelector("i");
-		let nextThemeName = Object.keys(gConfig.themes)[gNextThemeIndex];
-		let nextTheme = gConfig.themes[nextThemeName];
 		let currentTheme = gConfig.themes[gConfig.currentTheme];
-		if (textElement) textElement.innerText = isInitial ? currentTheme.name : nextTheme.name;
-		if (iconElement) iconElement.className = isInitial ? currentTheme.icon : nextTheme.icon;
+		if (textElement) textElement.innerText = currentTheme.name;
+		if (iconElement) iconElement.className = currentTheme.icon + " me-2";
 	});
+	// Update dropdown active state
+	if (themeDropdown) {
+		themeDropdown.querySelectorAll(".dropdown-item").forEach(item => {
+			item.classList.remove("active");
+			let checkIcon = item.querySelector(".bi-check");
+			if (checkIcon) checkIcon.remove();
 
+			if (item.dataset.theme === gConfig.currentTheme) {
+				item.classList.add("active");
+				let checkIcon = document.createElement("i");
+				checkIcon.className = "bi bi-check ms-2 flex-shrink-0";
+				item.appendChild(checkIcon);
+			}
+		});
+	}
 };
 
 /* Theme Change Function */
@@ -41,35 +105,43 @@ let setTheme = (theme = gConfig.defaultTheme, isInitial = false) => {
 /* Theme Initial Apply */
 setTheme(gConfig.currentTheme, true);
 
-/* Theme Cycle Function */
+/* Initialize theme dropdown when DOM is loaded */
+document.addEventListener("DOMContentLoaded", () => {
+	initializeThemeDropdown();
+});
+
+/* Theme Cycle Function - kept for backward compatibility */
 let cycleTheme = () => {
 	let nextThemeName = Object.keys(gConfig.themes)[gNextThemeIndex];
 	setTheme(nextThemeName);
 };
 
-/* Apply Logic to theme Pickers */
+/* Apply Logic to theme Pickers - Updated for new dropdown */
 themePickers.forEach(themePickerElement => {
-	/* Click cycle trough themes */
-	themePickerElement.addEventListener("click", cycleTheme);
+	// Only add click listener if it"s not a dropdown toggle
+	if (!themePickerElement.hasAttribute("data-bs-toggle")) {
+		/* Click cycle through themes */
+		themePickerElement.addEventListener("click", cycleTheme);
 
-	/* Hover enter change current to next theme */
-	themePickerElement.addEventListener("mouseenter", () => {
-		let textElement = themePickerElement.querySelector("span");
-		let iconElement = themePickerElement.querySelector("i");
-		let nextThemeName = Object.keys(gConfig.themes)[gNextThemeIndex];
-		let nextTheme = gConfig.themes[nextThemeName];
-		if (textElement) textElement.innerText = nextTheme.name;
-		if (iconElement) iconElement.className = nextTheme.icon;
-	});
+		/* Hover enter change current to next theme */
+		themePickerElement.addEventListener("mouseenter", () => {
+			let textElement = themePickerElement.querySelector("span");
+			let iconElement = themePickerElement.querySelector("i");
+			let nextThemeName = Object.keys(gConfig.themes)[gNextThemeIndex];
+			let nextTheme = gConfig.themes[nextThemeName];
+			if (textElement) textElement.innerText = nextTheme.name;
+			if (iconElement) iconElement.className = nextTheme.icon;
+		});
 
-	/* Hover leave change next to current theme */
-	themePickerElement.addEventListener("mouseleave", () => {
-		let textElement = themePickerElement.querySelector("span");
-		let iconElement = themePickerElement.querySelector("i");
-		let currentTheme = gConfig.themes[gConfig.currentTheme];
-		if (textElement) textElement.innerText = currentTheme.name;
-		if (iconElement) iconElement.className = currentTheme.icon;
-	});
+		/* Hover leave change next to current theme */
+		themePickerElement.addEventListener("mouseleave", () => {
+			let textElement = themePickerElement.querySelector("span");
+			let iconElement = themePickerElement.querySelector("i");
+			let currentTheme = gConfig.themes[gConfig.currentTheme];
+			if (textElement) textElement.innerText = currentTheme.name;
+			if (iconElement) iconElement.className = currentTheme.icon;
+		});
+	}
 });
 
 
