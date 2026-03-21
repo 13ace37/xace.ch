@@ -215,9 +215,9 @@ const fetchJSONData = async (url) => {
 const getNestedValue = (obj, path, defaultValue = "N/A") => path.split(".").reduce((acc, key) => acc && acc[key], obj) || defaultValue;
 
 /* Apply repo data */
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-	let repoData = fetchJSONData("/_repoData.json");
+	let repoData = await fetchJSONData("/_repoData.json");
 	if (!repoData) return;
 
 	[...document.getElementsByClassName("api-repoData")].forEach(x => x[x.getAttribute("data-bind-attribute") || "innerText"] = getNestedValue(repoData, x.getAttribute("data-bind-value")));
