@@ -211,6 +211,9 @@ const fetchJSONData = async (url) => {
 	}
 };
 
+/* Helper function get nested value in object by string */
+const getNestedValue = (obj, path, defaultValue = "N/A") => path.split(".").reduce((acc, key) => acc && acc[key], obj) || defaultValue;
+
 /* Apply repo data */
 document.addEventListener("DOMContentLoaded", () => {
 
