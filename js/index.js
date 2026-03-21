@@ -199,3 +199,25 @@ document.addEventListener("DOMContentLoaded", () => {
 	devIcon.addEventListener("mouseleave", () => devIcon.classList.remove("colored"));
 	new bootstrap.Tooltip(devIcon);
 });
+
+/* Helper function to fetch and parse json data */
+const fetchJSONData = async (url) => {
+	try {
+		const response = await fetch(url);
+		const data = response.ok ? await response.json() : null;
+		return data;
+	} catch (error) {
+		return null;
+	}
+};
+
+/* Apply repo data */
+document.addEventListener("DOMContentLoaded", () => {
+
+	let repoData = fetchJSONData("/_repoData.json");
+	if (!repoData) return;
+
+	[...document.getElementsByClassName("api-repoData")].forEach(x => x[x.getAttribute("data-bind-attribute") || "innerText"] = getNestedValue(repoData, x.getAttribute("data-bind-value")));
+
+});
+
